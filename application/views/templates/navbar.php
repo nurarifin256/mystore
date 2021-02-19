@@ -9,29 +9,37 @@
 
         <div class="collapse navbar-collapse ml-5" id="navbarNavDropdown">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link ml-5 mr-4" href="#">Home</a>
+                <li class="nav-item dropdown ml-5 mr-4">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Master
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="<?= base_url(); ?>admin/barang">Barang</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="<?= base_url(); ?>admin/supplier">Supplier</a>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-4" href="#">News</a>
+                    <a class="nav-link mr-4" href="#">Invoice</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-4" href="#">Produk</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Kontak</a>
+                    <a class="nav-link" href="#">Laporan</a>
                 </li>
             </ul>
 
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <form class="form-inline">
                         <input class="form-control" type="search" placeholder="Cari Produk">
                         <button type="submit" class="btn btn-light"><i class="fas fa-search"></i></button>
                     </form>
-                </li>
+                </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+                    <?php if ($this->session->userdata('username')) { ?>
+                        <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    <?php } else { ?>
+                        <a class="nav-link" href="#"><i class="fas fa-sign-in-alt"></i> Login</a>
+                    <?php } ?>
                 </li>
             </ul>
         </div>
