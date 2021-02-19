@@ -4,6 +4,13 @@
 <script src="<?= base_url(); ?>assets/font_awesome/js/brands.js"></script>
 <script src="<?= base_url(); ?>assets/font_awesome/js/solid.js"></script>
 <script src="<?= base_url(); ?>assets/font_awesome/js/fontawesome.js"></script>
+<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    });
+</script>
 
 <!-- Option 2: Separate Popper and Bootstrap JS -->
 <!--

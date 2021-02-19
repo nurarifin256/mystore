@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/font_awesome/css/fontawesome.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/font_awesome/css/brands.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/font_awesome/css/solid.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" type="text/css">
 
     <title><?php echo $judul ?></title>
 </head>
