@@ -9,6 +9,13 @@
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
+
+        $(".hapus_supplier").on('click', function() {
+            const kode = $(this).data('kode');
+
+            $('.kode_supplier').val(kode);
+            $('#modalHapus').modal('show');
+        });
     });
 </script>
 

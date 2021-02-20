@@ -15,9 +15,11 @@ class Admin extends CI_Controller
         $this->load->view("templates/footer");
     }
 
-    public function hapus_supplier($kode_supplier)
+    public function hapus_supplier()
     {
+        $kode_supplier = $this->input->post('kode_supplier');
         $this->Model_supplier->hapus($kode_supplier);
+        $this->session->set_flashdata('flash', 'Dihapus');
         redirect('Admin/supplier');
     }
 
