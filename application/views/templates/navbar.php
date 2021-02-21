@@ -1,7 +1,7 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <div class="container">
 
-        <a class="navbar-brand" href="#">My Store</a>
+        <a class="navbar-brand mr-5" href="#">My Store</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,12 +9,12 @@
 
         <div class="collapse navbar-collapse ml-5" id="navbarNavDropdown">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item dropdown ml-5 mr-4">
+                <li class="nav-item dropdown mr-4">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Master
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="<?= base_url(); ?>admin/barang">Barang</a>
+                        <a class="dropdown-item" href="<?= base_url(); ?>barang/index">Barang</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="<?= base_url(); ?>admin/supplier">Supplier</a>
                     </div>

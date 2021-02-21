@@ -43,7 +43,7 @@ class Admin extends CI_Controller
         $kode_supplier = $this->input->post('kode_supplier');
         $data = [
             "nama_supplier" => $this->input->post('nama_supplier', true),
-            "alamat" => $this->input->post('alamat', true),
+            "alamat"        => $this->input->post('alamat', true),
         ];
 
         $this->Model_supplier->ubahSupplier($kode_supplier, $data);

@@ -23,5 +23,6 @@ class Model_supplier extends CI_Model
     {
         $this->db->where('kode_supplier', $kode_supplier);
         $this->db->update('supplier', $data);
+        return true;
     }
 }
