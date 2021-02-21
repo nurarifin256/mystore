@@ -8,7 +8,7 @@
             <?php if ($this->session->flashdata('flash')) : ?>
                 <div class="row mt-3">
                     <div class="col-lg">
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
                             Data Supplier <strong>berhasil</strong> <?= $this->session->flashdata('flash'); ?>
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -39,7 +39,8 @@
                             <td><?= $s->nama_supplier ?></td>
                             <td><?= $s->alamat ?></td>
                             <td>
-                                <a href=""><i class="far fa-edit mr-2"></i></a>
+                                <a href="#" class="edit_supplier" data-toggle="modal" data-target="modalEdit" data-kode="<?= $s->kode_supplier ?>" data-nama="<?= $s->nama_supplier; ?>" data-alamat="<?= $s->alamat; ?>"><i class="far fa-edit mr-2"></i></a>
+
                                 <a href="#" class="hapus_supplier" data-toggle="modal" data-target="modalHapus" data-kode="<?= $s->kode_supplier ?>"><i class="far fa-trash-alt"></i></a>
                             </td>
                         </tr>
@@ -64,7 +65,7 @@
                 </div>
                 <div class="modal-footer">
                     <input type="hidden" name="kode_supplier" class="kode_supplier">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                     <button type="submit" class="btn btn-danger">Hapus</button>
                 </div>
             </div>
@@ -87,7 +88,7 @@
                 <form action="<?= base_url() . 'admin/tambah_supplier'; ?>" method="POST">
                     <div class="form-group">
                         <label for="">Nama Supplier</label>
-                        <input type="text" name="nama_supplier" class="form-control">
+                        <input type="text" name="nama_supplier" class="form-control" re>
                     </div>
 
                     <div class="form-group">
@@ -104,3 +105,40 @@
     </div>
 </div>
 <!-- akhir modal tambah -->
+
+<!-- modal edit -->
+<form action="<?= base_url() . 'admin/ubah_supplier'; ?>" method="post">
+    <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Supplier</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <input type="hidden" class="form-control kode" name="kode_supplier">
+
+                    <div class="form-group">
+                        <label>Nama Supplier</label>
+                        <input type="text" class="form-control nama" name="nama_supplier">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Alamat</label>
+                        <input type="text" class="form-control alamat" name="alamat">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Ubah</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- akhir modal edit -->

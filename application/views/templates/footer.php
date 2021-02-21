@@ -16,6 +16,17 @@
             $('.kode_supplier').val(kode);
             $('#modalHapus').modal('show');
         });
+
+        $(".edit_supplier").on('click', function() {
+            const kode = $(this).data('kode');
+            const nama = $(this).data('nama');
+            const alamat = $(this).data('alamat');
+
+            $('.kode').val(kode);
+            $('.nama').val(nama);
+            $('.alamat').val(alamat);
+            $('#modalEdit').modal('show');
+        });
     });
 </script>
 

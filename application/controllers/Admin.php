@@ -18,20 +18,37 @@ class Admin extends CI_Controller
     public function hapus_supplier()
     {
         $kode_supplier = $this->input->post('kode_supplier');
+
         $this->Model_supplier->hapus($kode_supplier);
         $this->session->set_flashdata('flash', 'Dihapus');
+
         redirect('Admin/supplier');
     }
 
     public function tambah_supplier()
     {
-        redirect('Admin/supplier');
+        $data = [
+            "nama_supplier" => $this->input->post('nama_supplier', true),
+            "alamat"        => $this->input->post('alamat', true)
+        ];
 
-        $this->form_validation->set_rules('nama_supplier', 'nama_supplier', 'required', [
-            'required' => 'Nama wajib di isi'
-        ]);
-        $this->form_validation->set_rules('alamat', 'alamat', 'required', [
-            'required' => 'Alamat wajib di isi'
-        ]);
+        $this->Model_supplier->tambahSupplier($data);
+        $this->session->set_flashdata('flash', 'Ditambahkan');
+
+        redirect('Admin/supplier');
+    }
+
+    public function ubah_supplier()
+    {
+        $kode_supplier = $this->input->post('kode_supplier');
+        $data = [
+            "nama_supplier" => $this->input->post('nama_supplier', true),
+            "alamat" => $this->input->post('alamat', true),
+        ];
+
+        $this->Model_supplier->ubahSupplier($kode_supplier, $data);
+        $this->session->set_flashdata('flash', 'Diubah');
+
+        redirect('Admin/supplier');
     }
 }
