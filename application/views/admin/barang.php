@@ -18,6 +18,22 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                    $no = 1;
+                    foreach ($barang->result() as $key => $b) : ?>
+                        <tr>
+                            <td><?= $no++; ?></td>
+                            <td><?= $b->nama_barang ?></td>
+                            <td><?= $b->harga ?></td>
+                            <td><?= $b->berat ?></td>
+                            <td><?= $b->qty ?></td>
+                            <td>
+                                <a href="#"><i class="far fa-edit mr-2"></i></a>
+
+                                <a href="#"><i class="far fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
